@@ -1,136 +1,62 @@
-<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mavericks</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/6010/6010054.png"
+            alt=""
+          />
+          Mavericks
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <label class="switch" id="theme-toggle">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DigiTek - Creative Digital Agency</title>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Innovate. Transform. Elevate.</h1>
+        <p>
+          We craft 🔥 cutting-edge websites, 📱 powerful mobile apps, and 🤖
+          AI-driven solutions to help businesses thrive in the digital era.
+          Elevate your brand with stunning design, seamless user experience, and
+          future-ready technology. 🚀
+        </p>
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon.png" fill="none" type="image/svg+xml">
+        <button class="cta">💬 Get a Quote</button>
+      </div>
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+      <div class="hero-image">
+        <img src="/assets/images/hero.png" alt="Digital Experience" />
+      </div>
+    </section>
 
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- 
-    - preload images
-  -->
-  <link rel="preload" as="image" href="./assets/images/hero_banner.png">
-
-</head>
-
-<body id="top">
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-
-  </header>
-
-
-  <main>
-    <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="section hero" id="home" aria-label="hero">
-
-      </section>
-
-
-      <!-- 
-        - #SERVICE
-      -->
-
-      <section class="section service" id="service" aria-label="service">
-
-      </section>
-
-
-      <!-- 
-        - #FEATURE
-      -->
-
-      <section class="section feature" id="feature" aria-label="feature">
-
-      </section>
-
-
-      <!-- 
-        - #PROJECT
-      -->
-
-      <section class="section project" id="project" aria-label="project">
-
-      </section>
-
-
-      <!-- 
-        - #NEWSLETTER
-      -->
-
-      <section class="section newsletter has-bg-image" aria-label="newsletter">
-
-      </section>
-
-
-      <!-- 
-        - #BLOG
-      -->
-
-      <section class="section blog" id="blog" aria-label="blog">
-
-      </section>
-
-    </article>
-  </main>
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
-
-  </footer>
-
-
-  <!-- 
-    - #BACK TO TOP
-  -->
-
-  <a href="#top" class="back-top-btn has-after active" aria-label="back to top" data-back-top-btn>
-    <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
-  </a>
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js" defer></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</body>
-
+    <footer>
+      <p>&copy; 2025 Software Agency. All Rights Reserved.</p>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,668 @@
+@font-face {
+  font-family: Gilroy;
+  src: url("./assets/fonts/Gilroy-Regular.ttf");
+}
+:root {
+  --primary-color: #007bff;
+  --bg-color: #fff;
+  --text-color: #333;
+  --card-bg: #f4f4f4;
+  --card-text: #222;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --card-bg: #1e1e1e;
+  --card-text: #ddd;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.logo img {
+  width: 40px; /* Adjust size as needed */
+  height: auto;
+}
+
+body {
+  font-family: Gilroy;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+section {
+  min-height: 80vh;
+  max-height: max-content;
+  /* max-height: max-content; */
+}
+header {
+  height: 10vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--primary-color);
+  color: white;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 40px;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--hover-color);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background: white;
+  width: 30px;
+  height: 3px;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--primary-color);
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+.center-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-content > h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.nav-links {
+  align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta {
+  background: var(--primary-color);
+  border: none;
+  padding: 1rem 2rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.cta:hover {
+  background: var(--hover-color);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  .hero-content,
+  .hero-image {
+    text-align: center;
+  }
+}
+
+button.cta {
+  background: var(--primary-color);
+  border: none;
+  padding: 1rem 2rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button.cta:hover {
+  background: #0056b3;
+}
+
+.service-container,
+.project-container {
+  /* background: var(--bg-color); */
+  padding: 10rem 10rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.service-card {
+  padding: 2rem;
+  background: var(--card-bg);
+  color: var(--card-text);
+
+  border-radius: 8px;
+  transition: transform 0.3s;
+  flex: 1 1 300px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-card .icon img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.project-card {
+  padding: 2rem;
+  background: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 8px;
+  transition: transform 0.3s;
+  flex: 1 1 300px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+input,
+textarea,
+button {
+
+  padding: 1rem;
+  border: 1px solid var(--card-bg);
+  outline: none;
+  background: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 5px;
+}
+input,
+textarea{
+  width: 100%;
+}
+
+button {
+  box-sizing: border-box;
+  background: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: white;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 1rem 0;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .hero {
+    padding: 3rem 1rem;
+  }
+  .service-container,
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-card,
+  .project-card {
+    width: 90%;
+  }
+}
+
+/* From Uiverse.io by JkHuger */
+.sparkle-button {
+  --active: 0;
+  --bg: radial-gradient(
+      40% 50% at center 100%,
+      hsl(270 calc(var(--active) * 97%) 72% / var(--active)),
+      transparent
+    ),
+    radial-gradient(
+      80% 100% at center 120%,
+      hsl(260 calc(var(--active) * 97%) 70% / var(--active)),
+      transparent
+    ),
+    hsl(260 calc(var(--active) * 97%) calc((var(--active) * 44%) + 12%));
+  background: var(--bg);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+  padding: 1em 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  white-space: nowrap;
+  border-radius: 100px;
+  position: relative;
+  box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em)
+      hsl(260 97% 61% / 0.75),
+    0 0em 0 0
+      hsl(260 calc(var(--active) * 97%) calc((var(--active) * 50%) + 30%)) inset,
+    0 -0.05em 0 0 hsl(260 calc(var(--active) * 97%) calc(var(--active) * 60%)) inset;
+  transition: box-shadow var(--transition), scale var(--transition),
+    background var(--transition);
+  scale: calc(1 + (var(--active) * 0.1));
+  transition: 0.3s;
+}
+
+.sparkle-button:active {
+  scale: 1;
+  transition: 0.3s;
+}
+
+.sparkle path {
+  color: hsl(0 0% calc((var(--active, 0) * 70%) + var(--base)));
+  transform-box: fill-box;
+  transform-origin: center;
+  fill: currentColor;
+  stroke: currentColor;
+  animation-delay: calc((var(--transition) * 1.5) + (var(--delay) * 1s));
+  animation-duration: 0.6s;
+  transition: color var(--transition);
+}
+
+.sparkle-button:is(:hover, :focus-visible) path {
+  animation-name: bounce;
+}
+
+@keyframes bounce {
+  35%,
+  65% {
+    scale: var(--scale);
+  }
+}
+
+.sparkle path:nth-of-type(1) {
+  --scale: 0.5;
+  --delay: 0.1;
+  --base: 40%;
+}
+
+.sparkle path:nth-of-type(2) {
+  --scale: 1.5;
+  --delay: 0.2;
+  --base: 20%;
+}
+
+.sparkle path:nth-of-type(3) {
+  --scale: 2.5;
+  --delay: 0.35;
+  --base: 30%;
+}
+
+.sparkle-button:before {
+  content: "";
+  position: absolute;
+  inset: -0.2em;
+  z-index: -1;
+  border: 0.25em solid hsl(260 97% 50% / 0.5);
+  border-radius: 100px;
+  opacity: var(--active, 0);
+  transition: opacity var(--transition);
+}
+
+.spark {
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  rotate: 0deg;
+  overflow: hidden;
+  mask: linear-gradient(white, transparent 50%);
+  animation: flip calc(var(--spark) * 2) infinite steps(2, end);
+}
+
+@keyframes flip {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.spark:before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  aspect-ratio: 1;
+  top: 0%;
+  left: 50%;
+  z-index: -1;
+  translate: -50% -15%;
+  rotate: 0;
+  transform: rotate(-90deg);
+  opacity: calc((var(--active)) + 0.4);
+  background: conic-gradient(from 0deg, transparent 0 340deg, white 360deg);
+  transition: opacity var(--transition);
+  animation: rotate var(--spark) linear infinite both;
+}
+
+.spark:after {
+  content: "";
+  position: absolute;
+  inset: var(--cut);
+  border-radius: 100px;
+}
+
+.backdrop {
+  position: absolute;
+  inset: var(--cut);
+  background: var(--bg);
+  border-radius: 100px;
+  transition: background var(--transition);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+@supports (selector(:has(:is(+ *)))) {
+  body:has(button:is(:hover, :focus-visible)) {
+    --active: 1;
+    --play-state: running;
+  }
+
+  .bodydrop {
+    display: none;
+  }
+}
+
+.sparkle-button:is(:hover, :focus-visible) ~ :is(.bodydrop, .particle-pen) {
+  --active: 1;
+  --play-state: runnin;
+}
+
+.sparkle-button:is(:hover, :focus-visible) {
+  --active: 1;
+  --play-state: running;
+}
+
+.sp {
+  position: relative;
+}
+
+.particle-pen {
+  position: absolute;
+  width: 200%;
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  -webkit-mask: radial-gradient(white, transparent 65%);
+  z-index: -1;
+  opacity: var(--active, 0);
+  transition: opacity var(--transition);
+}
+
+.particle {
+  fill: white;
+  width: calc(var(--size, 0.25) * 1rem);
+  aspect-ratio: 1;
+  position: absolute;
+  top: calc(var(--y) * 1%);
+  left: calc(var(--x) * 1%);
+  opacity: var(--alpha, 1);
+  animation: float-out calc(var(--duration, 1) * 1s) calc(var(--delay) * -1s)
+    infinite linear;
+  transform-origin: var(--origin-x, 1000%) var(--origin-y, 1000%);
+  z-index: -1;
+  animation-play-state: var(--play-state, paused);
+}
+
+.particle path {
+  fill: hsl(0 0% 90%);
+  stroke: none;
+}
+
+.particle:nth-of-type(even) {
+  animation-direction: reverse;
+}
+
+@keyframes float-out {
+  to {
+    rotate: 360deg;
+  }
+}
+
+
+
+/* From Uiverse.io by namecho */
+.switch {
+  --button-width: 3.5em;
+  --button-height: 2em;
+  --toggle-diameter: 1.5em;
+  --button-toggle-offset: calc(
+    (var(--button-height) - var(--toggle-diameter)) / 2
+  );
+  --toggle-shadow-offset: 10px;
+  --toggle-wider: 3em;
+  --color-grey: #cccccc;
+  --color-green: #4296f4;
+}
+
+.slider {
+  display: inline-block;
+  width: var(--button-width);
+  height: var(--button-height);
+  background-color: var(--color-grey);
+  border-radius: calc(var(--button-height) / 2);
+  position: relative;
+  transition: 0.3s all ease-in-out;
+}
+
+.slider::after {
+  content: "";
+  display: inline-block;
+  width: var(--toggle-diameter);
+  height: var(--toggle-diameter);
+  background-color: #fff;
+  border-radius: calc(var(--toggle-diameter) / 2);
+  position: absolute;
+  top: var(--button-toggle-offset);
+  transform: translateX(var(--button-toggle-offset));
+  box-shadow: var(--toggle-shadow-offset) 0
+    calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+  transition: 0.3s all ease-in-out;
+}
+
+.switch input[type="checkbox"]:checked + .slider {
+  background-color: var(--color-green);
+}
+
+.switch input[type="checkbox"]:checked + .slider::after {
+  transform: translateX(
+    calc(
+      var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)
+    )
+  );
+  box-shadow: calc(var(--toggle-shadow-offset) * -1) 0
+    calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+
+.switch input[type="checkbox"] {
+  display: none;
+}
+
+.switch input[type="checkbox"]:active + .slider::after {
+  width: var(--toggle-wider);
+}
+
+.switch input[type="checkbox"]:checked:active + .slider::after {
+  transform: translateX(
+    calc(
+      var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)
+    )
+  );
+}
+
+.text {
+  translate: 2% -6%;
+  letter-spacing: 0.01ch;
+  background: linear-gradient(
+    90deg,
+    hsl(0 0% calc((var(--active) * 100%) + 65%)),
+    hsl(0 0% calc((var(--active) * 100%) + 26%))
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background var(--transition);
+}
+
+.sparkle-button svg {
+  inline-size: 1.25em;
+  translate: -25% -5%;
+}
