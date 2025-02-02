@@ -150,9 +150,13 @@ nav {
 }
 
 .center-content > h2 {
+  text-align: center;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 10px;
+}
+.center-content > p {
+  text-align: center;
 }
 .nav-links {
   align-items: center;
@@ -338,16 +342,25 @@ footer {
 section {
   padding: 10px;
 }
+.nav-links.active {
+  display: flex;
+}
 
+a{
+  color: var(--text-color);
+  text-decoration: none;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   nav {
-  height: 10px;
+  /* height: 10px; */
     align-items: center;
     height: auto;
     padding: 1rem 2rem;
   }
   .nav-links {
+    display: none;
+
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;

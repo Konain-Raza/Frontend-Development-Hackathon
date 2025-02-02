@@ -4,9 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.querySelector("#theme-toggle input");
   const body = document.body;
 
-  mobileMenu.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+   mobileMenu.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+
+
+   });
 
   if (localStorage.getItem("theme") === "dark") {
     body.classList.add("dark-mode");
